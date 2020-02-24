@@ -1,0 +1,45 @@
+<html>
+
+  <head>
+
+    <title>TEST</title>
+
+  </head>
+
+    <body>
+
+      <p id = "words">0</p>
+
+      <script>
+
+        /*console.log("testing");
+
+        var string = "";
+
+        for(var i = 0; i <= 9; i++){
+
+          string = string + i;
+
+        }
+
+        colsole.log(string);*/
+
+        document.addEventListener("click", function(){
+
+          var p = document.getElementById("words");
+          var insideP = parseInt(p.innerHTML);
+
+          if(insideP < 6){
+
+            p.innerHTML = (insideP += 1);
+
+          }
+
+        });
+
+      </script>
+
+    </body>
+
+
+</html>
