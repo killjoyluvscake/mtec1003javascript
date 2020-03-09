@@ -8,7 +8,9 @@
 
     <body>
 
-      <p id = "words">0</p>
+      <!-- <p id = "words">0</p> -->
+
+      <canvas id = "myCanvas" width = "600" height = "600"></canvas>
 
       <script>
 
@@ -24,7 +26,7 @@
 
         colsole.log(string);*/
 
-        document.addEventListener("click", function(){
+        /*document.addEventListener("click", function(){
 
           var p = document.getElementById("words");
           var insideP = parseInt(p.innerHTML);
@@ -45,7 +47,32 @@
         }
 
         even_test(9);
-        even_test(6);
+        even_test(6);*/
+
+        var c = document.getElementById("myCanvas")
+        var ctx = c.getContext("2d");
+
+        var x = 5;
+
+        function drawRect(i){
+          ctx.beginPath();
+          ctx.lineWidth = "5";
+          ctx.strokeStyle = "blue";
+
+          ctx.rect(x, 5, 100, 100);
+
+          ctx.stroke();
+        }
+
+        function moveRect(){
+          ctx.clearRect(0, 0, 600, 600);
+          drawRect(x += 5);
+          if(x <= 400){
+          requestAnimationFrame(moveRect);
+          }
+        }
+
+        moveRect();
 
       </script>
 
